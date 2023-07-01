@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
+*{font-family: 'Montserrat', sans-serif;}
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 50px;
+  text-align: left;
+  display: flex;
+  align-items: left;
+  justify-content: space-between;
+  border-bottom: 1px solid black;
+  background-color: rgba(213, 140, 252, 0.8); /* utilizar rgba() para ajustar la opacidad */
+  width: 100%;
+}
+.header .header-buttons {
+  display: inline-block;
+  width: 33.3%;
+  text-align: center;
+}
+
+.header .header-buttons input {
+  color: black;
+  font-size: 16px; /* aumentar el tamaño de la fuente del botón */
+  width: 120px; /* aumentar el ancho del botón */
+  height: 40px; /* aumentar la altura del botón */
+  border: none;
+  border-radius: 5px;
+  margin-top: -35px;
+  z-index: 1;
+  margin-right: 10px; /* agregar un margen derecho para separar los botones */
+  background-color: #9a2edb; /* establecer el mismo valor de background-color que el encabezado */
+}
+
+.header .header-buttons:last-child input {
+  margin-right: 0; /* no agregar margen derecho al último botón */
+}
+.header .header-buttons input:hover {
+  background-color: rgba(255, 255, 255, 1); /* cambiar el color de fondo del botón al pasar el mouse sobre él */
+  color: rgba(213, 140, 252, 0.8); /* cambiar el color del texto del botón al pasar el mouse sobre él */
+  cursor: pointer; /* cambiar el cursor a pointer */
+}
+
+.registro {
+  margin-right: 10px; /* agregar un margen derecho para separar los botones */
+}
+
+.eliminar {
+  margin-right: 10px; /* agregar un margen derecho para separar los botones */
+}
+
+.actualizar {
+  margin-right: 0; /* no agregar margen derecho al último botón */
+}
+.header img {
+width: 50px;
+height: 50px;
+float: left;
+margin-left: 10px;
+margin-right: -175px;
+}
+input {
+  padding: 10px;
+  margin: 5px;
+  width: 100%;
+}
+body {
+  background-color: #e5b3fe;
+  background-image: url(https://i.imgur.com/GSNLZoi.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+form {
+  margin: 0 auto;
+  width: 500px;
+  padding: 20px;
+}
+table {
+border-collapse: collapse;
+width: 50%;
+margin: 0 auto;
+background-color: rgba(229, 179, 254, 0.5);
+}
+
+th, td {
+border: 1px solid black;
+padding: 5px;
+}
+th {
+background-color: #dddddd;
+}
+.header .text {
+  display: inline-block;
+  vertical-align: middle;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  text-shadow: 1px 1px 1px #000000;
+}

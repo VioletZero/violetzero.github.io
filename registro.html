@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Historia Médica</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="main-styles.css">
+  <style>
+    *{margin: 0; padding: 0;}
+  </style>
+</head>
+<body>
+<header>
+  <div class="header">
+    <img src="https://i.imgur.com/pnMSPNs.png" alt="Logo">
+    <div class="header-buttons">
+      <form method="POST" action="consulta.php">
+        <input value="Consultar" type="submit" class="btn btn-info consulta" name="btn2"/>
+      </form>
+    </div>
+    <div class="header-buttons">
+      <form method="POST" action="eliminado.php">
+        <input value="Eliminar" type="submit" class="btn btn-info eliminar" name="btn3"/>
+      </form>
+    </div>
+    <div class="header-buttons">
+      <form method="POST" action="actualizado.php">
+        <input value="Actualizar" type="submit" class="btn btn-info actualizar" name="btn4"/>
+      </form>
+    </div>
+  </div>
+</header>
+    <br>
+  <form name="Datos" method="POST" action="biblioteca.php">
+	<center>
+	  <br>
+	  <h2>Datos del Paciente</h2>
+	</center>
+	  <br>
+      Nombres <input type="text" name="nombre" value="" required/>
+      <br>
+      Apellidos <input type="text" name="apellido" value="" required/>
+      <br>
+      Cédula <input type="text" name="cedula" value="" required/>
+      <br>
+      Teléfono <input type="text" name="telefono" value="" required/>
+      <br>
+      Correo <input type="text" name="correo" value="" required/>
+      <br>
+      Fecha de consulta <input type="date" name="fecha_cons" value="" required/>
+      <br>
+      Motivo de consulta <input type="text" name="motivo_cons" value="" required/>
+      <br>
+      Dirección <input type="text" name="direccion" value="" required/>
+      <br>
+      Antecedentes personales <input type="text" name="antece_per" value="" required/>
+      <br>
+      Antecedentes familiares <input type="text" name="antece_fam" value="" required/>
+      <br>
+      Número de hijos <input type="text" name="num_hijos" value="" required/>
+      <br>
+      Tratamiento propuesto <input type="text" name="tratam_prop" value="" required/>
+      <br>
+      Fecha del procedimiento <input type="date" name="fecha_proc" value="" required/>
+      <br>
+      Próxima Cita <input type="date" name="fecha_prox" value="" required/>
+      <br>
+      Fecha de Alta médica <input type="date" name="fecha_alta" value="" required/>
+      <br>
+      Observaciones <input type="text" name="obser" value="" required/>
+      <br>
+      <input value="Enviar" type="submit" class="btn btn-success btn-enviar" name="btn1"/>
+      <br>
+  </form>
+</body>
+</html>

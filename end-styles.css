@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
+*{font-family: 'Montserrat', sans-serif;}
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 50px;
+  text-align: left;
+  display: flex;
+  align-items: left;
+  justify-content: space-between;
+  border-bottom: 1px solid black;
+  background-color: rgba(213, 140, 252, 0.8); /* utilizar rgba() para ajustar la opacidad */
+  width: 100%;
+}
+
+.header .header-buttons {
+  display: inline-block; /* usar display: inline-block en lugar de float: left */
+  width: 33.3%; /* ajustar el ancho del contenedor para asegurarte de que haya suficiente espacio para los botones */
+  text-align: center; /* centrar el contenido de los botones */
+}
+
+.header .header-buttons input {
+  color: black;
+  font-size: 16px; /* aumentar el tamaño de la fuente del botón */
+  width: 120px; /* aumentar el ancho del botón */
+  height: 40px; /* aumentar la altura del botón */
+  border: none;
+  border-radius: 5px;
+  margin-top: -15px;
+  z-index: 1;
+  margin-right: 10px; /* agregar un margen derecho para separar los botones */
+  background-color: #9a2edb; /* establecer el mismo valor de background-color que el encabezado */
+}
+
+.header .header-buttons:last-child input {
+  margin-right: 0; /* no agregar margen derecho al último botón */
+}
+.header .header-buttons input:hover {
+  background-color: rgba(255, 255, 255, 1); /* cambiar el color de fondo del botón al pasar el mouse sobre él */
+  color: rgba(213, 140, 252, 0.8); /* cambiar el color del texto del botón al pasar el mouse sobre él */
+  cursor: pointer; /* cambiar el cursor a pointer */
+}
+.registro {
+  margin-left: 20px;
+  margin-right: 10px;
+}
+.consulta {
+  margin-right: 10px; /* agregar un margen derecho para separar los botones */
+  margin-left: -300px;
+}
+
+.eliminar {
+  margin-right: 10px; /* agregar un margen derecho para separar los botones */
+  margin-left: -500px;
+}
+
+.actualizar {
+  margin-left: -500px;
+  margin-right: 0; /* no agregar margen derecho al último botón */
+}
+.header img {
+width: 50px;
+height: 50px;
+float: left;
+margin-left: 10px;
+margin-right: -175px;
+}
+input {
+  padding: 10px;
+  margin: 5px;
+  width: 100%;
+}
+body {
+  background-color: #e5b3fe;
+  background-image: url(https://i.imgur.com/GSNLZoi.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+
+}
+form {
+  margin: 0 auto;
+  width: 500px;
+  padding: 20px;
+}
+.header .text {
+position: absolute;
+right: 0;
+top: 0;
+bottom: 0;
+padding: 10px;
+margin-top: 10px;
+}
