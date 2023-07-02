@@ -23,7 +23,7 @@
 }
 
 .header .header-buttons input {
-  color: black;
+  color: white;
   font-size: 16px; /* aumentar el tamaño de la fuente del botón */
   width: 120px; /* aumentar el ancho del botón */
   height: 40px; /* aumentar la altura del botón */
@@ -92,7 +92,6 @@ top: 0;
 bottom: 0;
 padding: 10px;
 margin-top: 10px;
-color: white;
 }
 .btn-enviar {
   background-color: rgba(213, 140, 252, 0.8);
