@@ -136,13 +136,13 @@ input[name="tratam_prop"] {
   width: 65%;
 }
 input[name="fecha_proc"] {
-  width: 30%;
+  width: 20%;
 }
 input[name="fecha_prox"] {
-  width: 30%;
+  width: 20%;
 }
 input[name="fecha_alta"] {
-  width: 30%;
+  width: 20%;
 }
 .mainForm {
     display: flex;
