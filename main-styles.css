@@ -112,7 +112,39 @@ input[name="nombre"] {
 input[name="apellido"] {
   width: 45%;
 }
-
+input[name="telefono"] {
+  width: 45%;
+}
+input[name="correo"] {
+  width: 45%;
+}
+input[name="fecha_cons"] {
+  width: 45%;
+}
+input[name="motivo_cons"] {
+  width: 45%;
+}
+input[name="antece_per"] {
+  width: 45%;
+}
+input[name="antece_fam"] {
+  width: 45%;
+}
+input[name="num_hijos"] {
+  width: 25%;
+}
+input[name="tratam_prop"] {
+  width: 65%;
+}
+input[name="fecha_prox"] {
+  width: 30%;
+}
+input[name="fecha_prox"] {
+  width: 30%;
+}
+input[name="fecha_alta"] {
+  width: 30%;
+}
 .mainForm {
     display: flex;
     flex-wrap: wrap;
