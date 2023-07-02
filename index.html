@@ -11,7 +11,7 @@
 <body>
 <header>
   <div class="header">
-    <img src="https://i.imgur.com/pnMSPNs.png" alt="Logo">
+    <img src="logo.png" alt="Logo">
     <div class="header-buttons">
       <form method="POST" action="consulta.php">
         <input value="Consultar" type="submit" class="btn btn-info consulta" name="btn2"/>
@@ -29,16 +29,18 @@
     </div>
   </div>
 </header>
-    <br>
-  <form name="Datos" method="POST" action="biblioteca.php">
-	<center>
-	  <br>
+<br>
+<br>
+<br>
+<br>
+  <center>
 	  <h2>Datos del Paciente</h2>
 	</center>
+  <form name="Datos" method="POST"  class="mainForm"  action="biblioteca.php">
+	
 	  <br>
-      Nombres <input type="text" name="nombre" value="" required/>
-      <br>
-      Apellidos <input type="text" name="apellido" value="" required/>
+      <input type="text" name="nombre" value="" required placeholder="Nombre"/>
+       <input type="text" name="apellido" value="" required placeholder="Apellidos"/>
       <br>
       Cédula <input type="text" name="cedula" value="" required/>
       <br>
