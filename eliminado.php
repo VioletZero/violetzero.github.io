@@ -91,7 +91,7 @@ mysqli_close($conexion);
 	<form name="Datos" method="POST" action="borrado.php">
 	<center>
 		<br>
-		Ingrese el id del paciente que desea eliminar  <input type="text" name="ID" value="" required>
+	<input type="text" name="ID" value="" required placeholder="Ingrese el id del paciente que desea eliminar">
 		<input value="Borrar" type="submit" class="btn btn-info" name="btn">
 	</center>
 </body>

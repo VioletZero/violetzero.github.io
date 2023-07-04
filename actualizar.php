@@ -93,42 +93,35 @@ if(isset($_POST['btn']))
 		</header>
 <body>
 	<center> <br> <br> <br> <H2> Formulario de actualización </H2> <BR> </center>
-	<form name="Datos" method="POST" action="update.php">
+	<form name="Datos" method="POST" class="upform" action="update.php">
 	<center>
 		<br>
-		Confirme el id a actualizar del paciente <input type="text" name="id" value="">
+		<input type="text" name="id" value="" placeholder="Confirme el id a actualizar del paciente"/>
 		<br>
-		Inserte el nombre a actualizar del paciente <input type="text" name="nombre" value="">
+		<input type="text" name="nombre" value="" placeholder="Inserte el nombre a actualizar del paciente"/>
+		<input type="text" name="apellido" value="" placeholder="Inserte el apellido a actualizar del paciente">
 		<br>
-		Inserte el apellido a actualizar del paciente <input type="text" name="apellido" value="">
+		<input type="text" name="dni" value="" placeholder="Inserte la cédula de identidad a actualizar del paciente"/>
 		<br>
-		Inserte la cédula de identidad a actualizar del paciente <input type="text" name="dni" value="">
+		<input type="text" name="tlf" value="" placeholder="Inserte el teléfono a actualizar del paciente"/>
+		<input type="text" name="correo" value="" placeholder="Inserte el correo a actualizar del paciente"/>
 		<br>
-		Inserte el teléfono a actualizar del paciente <input type="text" name="tlf" value="">
+		<input placeholder="Inserte la fecha de consulta a actualizar del paciente" class="textbox-n" type="text" onfocus="(this.type='date')" name="fecha" value=""/>
 		<br>
-		Inserte el correo a actualizar del paciente <input type="text" name="correo" value="">
+		<input type="text" name="motiv" value="" placeholder="Inserte el motivo de consulta a actualizar del paciente"/>
+		<input type="text" name="direccion" value="" placeholder="Inserte la dirección a actualizar del paciente"/>
 		<br>
-		Inserte la fecha de consulta a actualizar del paciente <input type="date" name="fecha" value="">
+		<input type="text" name="anteceper" value="" placeholder="Inserte los antecedentes personales a actualizar del paciente"/>
+		<input type="text" name="antecefam" value="" placeholder="Inserte los antecedentes familiares a actualizar del paciente"/>
 		<br>
-		Inserte el motivo de consulta a actualizar del paciente <input type="text" name="motiv" value="">
+		<input type="number" name="nrohijos" min="0" max="10" value="" placeholder="Inserte el número de hijos a actualizar del paciente"/>
+		<input type="text" name="trataprop" value="" placeholder="Inserte el tratamiento propuesto a actualizar del paciente"/>
 		<br>
-		Inserte la dirección a actualizar del paciente <input type="text" name="direccion" value="">
+		<input placeholder="Inserte la fecha del procedimiento realizado a actualizar del paciente" clas="textbox-n" type="text" onfocus="(this.type='date')" name="fechaproc" value=""/> 
+		<input placeholder="Inserte la fecha de la próxima cita a actualizar del paciente" class="textbox-n" type="text" onfocus="(this.type='date')" name="fechaprox" value=""/>
 		<br>
-		Inserte los antecedentes personales a actualizar del paciente <input type="text" name="anteceper" value="">
-		<br>
-		Inserte los antecedentes familiares a actualizar del paciente <input type="text" name="antecefam" value="">
-		<br>
-		Inserte el número de hijos a actualizar del paciente <input type="text" name="nrohijos" value="">
-		<br>
-		Inserte el tratamiento propuesto a actualizar del paciente <input type="text" name="trataprop" value="">
-		<br>
-		Inserte la fecha del procedimiento realizado a actualizar del paciente <input type="date" name="fechaproc" value="">
-		<br>
-		Inserte la fecha de la próxima cita a actualizar del paciente <input type="date" name="fechaprox" value="">
-		<br>
-		Inserte la fecha de alta a actualizar del paciente <input type="date" name="alta" value="">
-		<br>
-		Inserte las observaciones a actualizar del paciente <input type="text" name="obser" value="">
+		<input placeholder="Inserte la fecha de alta a actualizar del paciente" class="textbox-n" type="text" onfocus="(this.type='date')" name="alta" value=""/>
+		<input type="text" name="obser" value="" placeholder="Inserte las observaciones a actualizar del paciente"/>
 		<br>
 		<input value="Enviar" type="submit" class="btn btn-success" name="btn"/>
   	</center>

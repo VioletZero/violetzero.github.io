@@ -91,10 +91,17 @@ mysqli_close($conexion);
 		</header>
 		<button id="recargar">Recargar</button>
 		<script>
-			// Agrega el código JavaScript para controlar el evento de clic del botón de recarga
 			document.getElementById("recargar").addEventListener("click", function() {
 				location.reload();
 			});
 		</script>
+	<center>
+		<form name="Datos" method="POST" class="searchform" action=excel.php>
+			<input type="text" name="id" value="" required placeholder="Inserte el id del paciente que desea imprimir"/>
+			<br>
+			<input value="Enviar" type="submit" class="btn btn-success btn-enviar" name="btn2"/>
+			<br>
+		</form>
+	</center>
 	</body>
 </html>

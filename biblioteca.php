@@ -27,7 +27,7 @@ $consulta="INSERT INTO `datos` (`Nombres`, `Apellidos`, `Cedula`, `Telefono`, `C
 
 $resultado=mysqli_query($conexion,$consulta) or die("error de registro");
 
-echo "registro completado";
+echo "'<br>' '<br>' '<br>' Registro completado!";
 
 
 mysqli_close($conexion);

@@ -10,9 +10,10 @@
   display: flex;
   align-items: left;
   justify-content: space-between;
-  border-bottom: 1px solid black;
   background-color: rgba(213, 140, 252, 0.8); /* utilizar rgba() para ajustar la opacidad */
   width: 100%;
+  padding-bottom: 10px;
+  box-shadow: 0px 0px 10px rgba(68, 68, 68, 0.196);
 }
 .header .header-buttons {
   display: inline-block;
@@ -21,16 +22,21 @@
 }
 
 .header .header-buttons input {
-  color: black;
+  color: white;
   font-size: 16px; /* aumentar el tamaño de la fuente del botón */
   width: 120px; /* aumentar el ancho del botón */
   height: 40px; /* aumentar la altura del botón */
   border: none;
   border-radius: 5px;
-  margin-top: -35px;
+  margin-top: -30px;
   z-index: 1;
   margin-right: 10px; /* agregar un margen derecho para separar los botones */
   background-color: #9a2edb; /* establecer el mismo valor de background-color que el encabezado */
+  transition: ease 0.2s;
+  font-weight: bold;
+  box-shadow: 0px 0px 10px rgba(68, 68, 68, 0.196);
+  border: solid 2px rgba(255, 255, 255, 0.345);
+
 }
 
 .header .header-buttons:last-child input {
@@ -73,12 +79,29 @@ body {
 }
 form {
   margin: 0 auto;
-  width: 500px;
+  width: 100%;
   padding: 20px;
 }
+.btn {
+  width: 50%;
+}
+input[name="ID"]{
+  width: 50%;
+}
+input[name="id"]{
+  width: 50%;
+}
+.header .text {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  padding: 10px;
+  margin-top: 10px;
+  }
 table {
 border-collapse: collapse;
-width: 50%;
+width: 0% auto;
 margin: 0 auto;
 background-color: rgba(229, 179, 254, 0.5);
 }
@@ -86,15 +109,78 @@ background-color: rgba(229, 179, 254, 0.5);
 th, td {
 border: 1px solid black;
 padding: 5px;
+width: 40%;
 }
 th {
 background-color: #dddddd;
 }
-.header .text {
-  display: inline-block;
-  vertical-align: middle;
-  color: white;
-  font-size: 24px;
+h2{
+  margin-top: 20px;
   font-weight: bold;
-  text-shadow: 1px 1px 1px #000000;
+}
+
+input[name="nombre"] {
+  width: 25%;
+}
+
+input[name="apellido"] {
+  width: 25%;
+  margin-left: -5px;
+}
+input[name="dni"] {
+  width:50%;
+}
+input[name="tlf"] {
+  width: 25%;
+}
+input[name="correo"] {
+  width: 25%;
+  margin-left: -5px;
+}
+input[name="fecha"] {
+  width: 50%;
+}
+input[name="motiv"] {
+  width: 25%;
+}
+input[name="direccion"] {
+  width: 25%;
+  margin-left: -5px;
+}
+input[name="anteceper"] {
+  width: 25%;
+}
+input[name="antecefam"] {
+  width: 25%;
+  margin-left: -5px;
+}
+input[name="nrohijos"] {
+  width: 10%;
+}
+input[name="trataprop"] {
+  width: 40%;
+  margin-left: -5px;
+}
+input[name="fechaproc"] {
+  width: 25%;
+}
+input[name="fechaprox"] {
+  width: 25%;
+  margin-left: -5px;
+}
+input[name="alta"] {
+  width: 25%;
+}
+input[name="obser"]{
+  width: 25%;
+  margin-left: -5px;
+}
+.upform {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 0 auto;
+    width: 500px;
+    padding: 10px;
+    margin-left: 10px;
 }

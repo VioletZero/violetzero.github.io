@@ -93,7 +93,7 @@ mysqli_close($conexion);
 	<center> <br> <br> <H2> Formulario de actualización </H2> <BR> </center>
 	<center>
 		<br>
-		Inserte el ID del paciente que desea editar   <input type="text" name="id" value="" required>
+		<input type="text" name="id" value="" required placeholder="Inserte el ID del paciente que desea editar">
 		<br>
 		<input value="Enviar" type="submit" class="btn btn-success" name="btn"/>
   	</center>

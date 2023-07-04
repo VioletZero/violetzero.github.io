@@ -72,6 +72,7 @@ margin-right: -175px;
 input {
   padding: 10px;
   width: 100%;
+  margin-top: 5px;
 }
 body {
   background-color: #e5b3fe;
@@ -97,6 +98,7 @@ margin-top: 10px;
   background-color: rgba(213, 140, 252, 0.8);
   align-items: center;
   width: 105%;
+  margin-top: 10px;
 }
 
  h2{
