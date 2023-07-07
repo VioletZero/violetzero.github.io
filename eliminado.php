@@ -1,58 +1,53 @@
 <?php
+include('db.php');
+$tabla="SELECT * FROM `datos`;";
+$resultado = mysqli_query($conexion,$tabla) or die("error de consulta");
 
-if(isset($_POST['btn3']))
+echo '<br> <br> <br>';
+echo '<table border="1" align="center" style="width:50%"> <tr>';
+echo '<th> ID </th>';
+echo '<th> Nombres </th>';
+echo '<th> Apellidos </th>';
+echo '<th> Cédula </th>';
+echo '<th> Telefono </th>';
+echo '<th> Correo </th>';
+echo '<th> Fecha de Consulta </th>';
+echo '<th> Motivo de consulta </th>';
+echo '<th> Direccion </th>';
+echo '<th> Antecedentes personales </th>';
+echo '<th> Antecedentes familiares </th>';
+echo '<th> Nro. de hijos </th>';
+echo '<th> Tratamiento propuesto </th>';
+echo '<th> Fecha de procedimiento </th>';
+echo '<th> Próxima cita </th>';
+echo '<th> Fecha de alta </th>';
+echo '<th> Observaciones </th>';
+echo '</tr>';
+
+while($consulta = mysqli_fetch_assoc($resultado))
 {
-	include('db.php');
-	$tabla="SELECT * FROM `datos`;";
-	$resultado = mysqli_query($conexion,$tabla) or die("error de consulta");
-	while($consulta = mysqli_fetch_array($resultado))
-	{
-		echo '<table border> <tr>';
-		echo '<th> ID </th>';
-		echo '<th> Nombres </th>';
-		echo '<th> Apellidos </th>';
-		echo '<th> Cédula </th>';
-		echo '<th> Telefono </th>';
-		echo '<th> Correo </th>';
-		echo '<th> Fecha de Consulta </th>';
-		echo '<th> Motivo de consulta </th>';
-		echo '<th> Direccion </th>';
-		echo '<th> Antecedentes personales </th>';
-		echo '<th> Antecedentes familiares </th>';
-		echo '<th> Nro. de hijos </th>';
-		echo '<th> Tratamiento propuesto </th>';
-		echo '<th> Fecha de procedimiento </th>';
-		echo '<th> Próxima cita </th>';
-		echo '<th> Fecha de alta </th>';
-		echo '<th> Observaciones </th>';
-		echo '</tr>';
-		
-		
-		while ($fila = $resultado -> fetch_assoc()){
-			echo '<tr>';
-			echo '<td>' . $fila['ID'] . '</td>';
-			echo '<td>' . $fila['Nombres'] . '</td>';
-			echo '<td>' . $fila['Apellidos'] . '</td>';
-			echo '<td>' . $fila['Cedula'] . '</td>';
-			echo '<td>' . $fila['Telefono'] . '</td>';
-			echo '<td>' . $fila['Correo'] . '</td>';
-			echo '<td>' . $fila['Fecha_consulta'] . '</td>';
-			echo '<td>' . $fila['Motivo_consulta'] . '</td>';
-			echo '<td>' . $fila['Direccion'] . '</td>';
-			echo '<td>' . $fila['AntecedentesPer'] . '</td>';
-			echo '<td>' . $fila['AntecedentesFam'] . '</td>';
-			echo '<td>' . $fila['NroHijos'] . '</td>';
-			echo '<td>' . $fila['TratamientoProc'] . '</td>';
-			echo '<td>' . $fila['FechaProc'] . '</td>';
-			echo '<td>' . $fila['ProxCita'] . '</td>';
-			echo '<td>' . $fila['FechaAlta'] . '</td>';
-			echo '<td>' . $fila['Observaciones'] . '</td>';
-			echo '</tr>';
-			}
-	}
+	echo '<tr>';
+	echo '<td>' . $consulta['ID'] . '</td>';
+	echo '<td>' . $consulta['Nombres'] . '</td>';
+	echo '<td>' . $consulta['Apellidos'] . '</td>';
+	echo '<td>' . $consulta['Cedula'] . '</td>';
+	echo '<td>' . $consulta['Telefono'] . '</td>';
+	echo '<td>' . $consulta['Correo'] . '</td>';
+	echo '<td>' . $consulta['Fecha_consulta'] . '</td>';
+	echo '<td>' . $consulta['Motivo_consulta'] . '</td>';
+	echo '<td>' . $consulta['Direccion'] . '</td>';
+	echo '<td>' . $consulta['AntecedentesPer'] . '</td>';
+	echo '<td>' . $consulta['AntecedentesFam'] . '</td>';
+	echo '<td>' . $consulta['NroHijos'] . '</td>';
+	echo '<td>' . $consulta['TratamientoProc'] . '</td>';
+	echo '<td>' . $consulta['FechaProc'] . '</td>';
+	echo '<td>' . $consulta['ProxCita'] . '</td>';
+	echo '<td>' . $consulta['FechaAlta'] . '</td>';
+	echo '<td>' . $consulta['Observaciones'] . '</td>';
+	echo '</tr>';
+}
 
 mysqli_close($conexion);
-}
 ?>
 <html>
 <head>
@@ -87,12 +82,14 @@ mysqli_close($conexion);
 				</div>
 			</div>
 		</header>
-	<center> <br> <br> <br> <br> <H2> Formulario de eliminación </H2> <BR> </center>
+	<center> <H2> Formulario de eliminación </H2> <BR> </center>
 	<form name="Datos" method="POST" action="borrado.php">
 	<center>
 		<br>
 	<input type="text" name="ID" value="" required placeholder="Ingrese el id del paciente que desea eliminar">
 		<input value="Borrar" type="submit" class="btn btn-info" name="btn">
+	</form>
 	</center>
+	<br>
 </body>
 </html>

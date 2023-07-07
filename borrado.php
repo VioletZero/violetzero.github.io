@@ -1,16 +1,15 @@
 <?php
 
-if(isset($_POST['btn']))
-{
-	include('db.php');
-
-$ID=$_POST['ID'];
-
-mysqli_query($conexion, "DELETE FROM `datos` WHERE `datos`.`ID` = '$ID'")or die("error al eliminar");
-
-mysqli_close($conexion);
-
-echo "'<br> <br> <br>' Se ha eliminado correctamente";
+if(isset($_POST['btn'])) {
+    include('db.php');
+    $ID = $_POST['ID'];
+    mysqli_query($conexion, "DELETE FROM `datos` WHERE `datos`.`ID` = '$ID'") or die("error al eliminar");
+    if (mysqli_affected_rows($conexion) > 0) {
+        echo "'<br> <br> <br>' Se ha eliminado correctamente";
+    } else {
+        echo "'<br> <br> <br>' El paciente con ID $ID no existe";
+    }
+    mysqli_close($conexion);
 }
 
 ?>

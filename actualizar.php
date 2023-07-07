@@ -96,7 +96,7 @@ if(isset($_POST['btn']))
 	<form name="Datos" method="POST" class="upform" action="update.php">
 	<center>
 		<br>
-		<input type="text" name="id" value="" placeholder="Confirme el id a actualizar del paciente"/>
+		<input type="text" name="id" value="" required placeholder="Confirme el id a actualizar del paciente"/>
 		<br>
 		<input type="text" name="nombre" value="" placeholder="Inserte el nombre a actualizar del paciente"/>
 		<input type="text" name="apellido" value="" placeholder="Inserte el apellido a actualizar del paciente">

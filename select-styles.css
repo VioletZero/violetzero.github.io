@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');
 *{font-family: 'Montserrat', sans-serif;}
 .header {
   position: fixed;
@@ -65,6 +65,7 @@ height: 50px;
 float: left;
 margin-left: 10px;
 margin-right: -175px;
+margin-top: 5px;
 }
 input {
   padding: 10px;
@@ -175,7 +176,7 @@ input[name="obser"]{
   width: 25%;
   margin-left: -5px;
 }
-.upform {
+.searchform {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -183,4 +184,20 @@ input[name="obser"]{
     width: 500px;
     padding: 10px;
     margin-left: 10px;
+}
+input[name="busqueda"] {
+  width: 50%;
+}
+#tabla-datos {
+  width: 25%;
+  margin: 0 auto;
+  max-width: 0%;
+}
+.btn-busqueda {
+  width: 25%;
+}
+.btn-busqueda input:hover {
+  background-color: rgba(255, 255, 255, 1); /* cambiar el color de fondo del botón al pasar el mouse sobre él */
+  color: rgba(213, 140, 252, 0.8); /* cambiar el color del texto del botón al pasar el mouse sobre él */
+  cursor: pointer; /* cambiar el cursor a pointer */
 }
