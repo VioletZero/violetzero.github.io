@@ -1,23 +1,32 @@
 <?php
+if(isset($_POST['btn1'])) {
+    //recoger informacion de login y crear variable para conexion
+    $servername = "localhost";
+    $username = $_POST['usuario'];
+    $password = $_POST['password'];
+    $database = "pacientes";
 
-if(isset($_POST['btn'])) {
-    include('db.php');
-    $ID = $_POST['ID'];
-    mysqli_query($conexion, "DELETE FROM `datos` WHERE `datos`.`ID` = '$ID'") or die("error al eliminar");
-    if (mysqli_affected_rows($conexion) > 0) {
-        echo "'<br> <br> <br>' Se ha eliminado correctamente";
-    } else {
-        echo "'<br> <br> <br>' El paciente con ID $ID no existe";
+    $conexion= new mysqli($servername, $username, $password, $database); 
+
+    if ($conexion->connect_error) {  
+        // si la conexión falla, guardar mensaje de error en variable y redirigir a la página de inicio de sesión
+        $mensaje = "Usuario o contraseña inválidos";
+        header("Location: index.php?mensaje=$mensaje");
+        exit;
     }
-    mysqli_close($conexion);
+    else {
+        // si la conexión es exitosa, mostrar mensaje de bienvenida
+        $mensaje = "Bienvenido al sistema! Seleccione qué desea ejecutar";
+        echo "<script>alert('$mensaje');</script>";
+    }
 }
-
 ?>
+<!DOCTYPE html>
 <html>
 	<head> 
-		<title>Datos eliminados</title>
+		<title>Inicio de sesión exitoso</title>
 		<meta charset="UTF-8">
-		<link rel="stylesheet" href="end-styles.css">
+		<link rel="stylesheet" href="start-styles.css">
 		<style>
 			*{margin: 0; padding: 0}
 		</style>
@@ -49,5 +58,5 @@ if(isset($_POST['btn'])) {
 				</div>
 			</div>
 		</header>
-	</body>
+    </body>
 </html>

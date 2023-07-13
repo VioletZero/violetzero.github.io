@@ -101,61 +101,35 @@ margin-top: 10px;
   width: 105%;
   margin-top: 10px;
 }
-
+.texto-centrado {
+  text-align: center;
+  margin-right: 450px;
+  margin-top: 10px;
+  color: black;
+  font-size: 32px;
+  font-style: bold;
+}
  h2{
   margin-top: 20px;
   font-weight: bold;
 }
 
-input[name="nombre"] {
-  width: 45%;
+input[name="usuario"] {
+  width: 100%;
 }
 
-input[name="apellido"] {
-  width: 45%;
+input[name="password"] {
+  width: 100%;
 }
-input[name="telefono"] {
-  width: 45%;
-}
-input[name="correo"] {
-  width: 45%;
-}
-input[name="fecha_cons"] {
-  width: 45%;
-}
-input[name="motivo_cons"] {
-  width: 45%;
-}
-input[name="antece_per"] {
-  width: 45%;
-}
-input[name="antece_fam"] {
-  width: 45%;
-}
-input[name="num_hijos"] {
-  width: 25%;
-}
-input[name="tratam_prop"] {
-  width: 65%;
-}
-input[name="fecha_proc"] {
-  width: 45%;
-}
-input[name="fecha_prox"] {
-  width: 45%;
-}
-input[name="fecha_alta"] {
-  width: 45%;
-}
-input[name="obser"]{
-  width: 45%;
-}
-.mainForm {
+.loginForm {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     margin: 0 auto;
     width: 500px;
     padding: 20px;
-  
+}
+.texto-formulario {
+  font-style: bold;
+  font-size: 32px;
 }

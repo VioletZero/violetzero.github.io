@@ -29,7 +29,7 @@
   height: 40px; /* aumentar la altura del botón */
   border: none;
   border-radius: 5px;
-  margin-top: -50px;
+  margin-top: -10px;
   z-index: 1;
   margin-right: 10px; /* agregar un margen derecho para separar los botones */
   background-color: #9a2edb; /* establecer el mismo valor de background-color que el encabezado */
@@ -42,24 +42,28 @@
 
 .header .header-buttons:last-child input {
   margin-right: 0; /* no agregar margen derecho al último botón */
-  
 }
 .header .header-buttons input:hover {
   background-color: rgba(255, 255, 255, 1); /* cambiar el color de fondo del botón al pasar el mouse sobre él */
   color: rgba(213, 140, 252, 0.8); /* cambiar el color del texto del botón al pasar el mouse sobre él */
   cursor: pointer; /* cambiar el cursor a pointer */
-
 }
-
+.registro {
+  margin-left: 20px;
+  margin-right: 10px;
+}
 .consulta {
   margin-right: 10px; /* agregar un margen derecho para separar los botones */
+  margin-left: -300px;
 }
 
 .eliminar {
   margin-right: 10px; /* agregar un margen derecho para separar los botones */
+  margin-left: -500px;
 }
 
 .actualizar {
+  margin-left: -500px;
   margin-right: 0; /* no agregar margen derecho al último botón */
 }
 .header img {
@@ -72,8 +76,8 @@ margin-top: 5px;
 }
 input {
   padding: 10px;
+  margin: 5px;
   width: 100%;
-  margin-top: 5px;
 }
 body {
   background-color: #e5b3fe;
@@ -94,68 +98,4 @@ top: 0;
 bottom: 0;
 padding: 10px;
 margin-top: 10px;
-}
-.btn-enviar {
-  background-color: rgba(213, 140, 252, 0.8);
-  align-items: center;
-  width: 105%;
-  margin-top: 10px;
-}
-
- h2{
-  margin-top: 20px;
-  font-weight: bold;
-}
-
-input[name="nombre"] {
-  width: 45%;
-}
-
-input[name="apellido"] {
-  width: 45%;
-}
-input[name="telefono"] {
-  width: 45%;
-}
-input[name="correo"] {
-  width: 45%;
-}
-input[name="fecha_cons"] {
-  width: 45%;
-}
-input[name="motivo_cons"] {
-  width: 45%;
-}
-input[name="antece_per"] {
-  width: 45%;
-}
-input[name="antece_fam"] {
-  width: 45%;
-}
-input[name="num_hijos"] {
-  width: 25%;
-}
-input[name="tratam_prop"] {
-  width: 65%;
-}
-input[name="fecha_proc"] {
-  width: 45%;
-}
-input[name="fecha_prox"] {
-  width: 45%;
-}
-input[name="fecha_alta"] {
-  width: 45%;
-}
-input[name="obser"]{
-  width: 45%;
-}
-.mainForm {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    margin: 0 auto;
-    width: 500px;
-    padding: 20px;
-  
 }

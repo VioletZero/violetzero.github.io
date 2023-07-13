@@ -2,9 +2,10 @@
 
 require_once 'vendor/autoload.php';
 
-use Box\Spout\Common\Type;
-use Box\Spout\Writer\Common\Creator\WriterEntityFactory;
-use Box\Spout\Writer\WriterFactory;
+use PhpOffice\PhpWord\IOFactory;
+use PhpOffice\PhpWord\SimpleType\Jc;
+use PhpOffice\PhpWord\Style\Cell;
+use PhpOffice\PhpWord\Style\Table;
 
 if (isset($_POST['btn2'])) {
     include('db.php');
@@ -13,22 +14,47 @@ if (isset($_POST['btn2'])) {
     $tabla = "SELECT * FROM `datos` WHERE ID = $id";
     $resultado = mysqli_query($conexion, $tabla) or die("error de consulta");
 
-    $writer = WriterEntityFactory::createXLSXWriter();
+    // Create a new PHPWord object
+    $phpWord = new \PhpOffice\PhpWord\PhpWord();
 
-    $writer->openToBrowser('historias_medicas.xlsx');
+    // Agregar una sección al documento
+    $section = $phpWord->addSection();
 
-    // Set the header image
-    //$writer->setDefaultRowStyle(WriterEntityFactory::createStyle(['header-image' => 'images/header.png']));
+    // Agregar un encabezado al documento
+    $header = $section->addHeader();
+    $header->addText('Centro Médico Belleza Total', array('bold' => true), array('alignment' => \PhpOffice\PhpWord\SimpleType\Jc::CENTER));
 
-    $headerRow = WriterEntityFactory::createRowFromArray(['Nombres', 'Apellidos', 'Cedula', 'Telefono', 'Correo', 'Fecha de Consulta', 'Motivo de consulta', 'Direccion', 'Antecedentes personales', 'Antecedentes familiares', 'Nro. de hijos', 'Tratamiento propuesto', 'Fecha de procedimiento', 'Próxima cita', 'Fecha de alta', 'Observaciones']);
-    $writer->addRow($headerRow);
-
+    // Agregar los datos de la tabla al documento
     while ($fila = $resultado->fetch_assoc()) {
-        $row = WriterEntityFactory::createRowFromArray([$fila['Nombres'], $fila['Apellidos'], $fila['Cedula'], $fila['Telefono'], $fila['Correo'], $fila['Fecha_consulta'], $fila['Motivo_consulta'], $fila['Direccion'], $fila['AntecedentesPer'], $fila['AntecedentesFam'], $fila['NroHijos'], $fila['TratamientoProc'], $fila['FechaProc'], $fila['ProxCita'], $fila['FechaAlta'], $fila['Observaciones']]);
-        $writer->addRow($row);
+
+        $section->addText("Nombres: " . $fila['Nombres']);
+        $section->addText("Apellidos: " . $fila['Apellidos']);
+        $section->addText("Cédula: " . $fila['Cedula']);
+        $section->addText("Teléfono: " . $fila['Telefono']);
+        $section->addText("Correo: " . $fila['Correo']);
+        $section->addText("Fecha de consulta: " . $fila['Fecha_consulta']);
+        $section->addText("Motivo de consulta: " . $fila['Motivo_consulta']);
+        $section->addText("Dirección: " . $fila['Direccion']);
+        $section->addText("Antecedentes personales: " . $fila['AntecedentesPer']);
+        $section->addText("Antecedentes familiares: " . $fila['AntecedentesFam']);
+        $section->addText("Número de hijos: " . $fila['NroHijos']);
+        $section->addText("Tratamiento propuesto: " . $fila['TratamientoProc']);
+        $section->addText("Fecha de procedimiento: " . $fila['FechaProc']);
+        $section->addText("Próxima cita: " . $fila['ProxCita']);
+        $section->addText("Fecha de alta: " . $fila['FechaAlta']);
+        $section->addText("Observaciones: " . $fila['Observaciones']);
+
+        // Agregar un salto de página después de cada fila
+        $section->addPageBreak();
+
     }
 
-    $writer->close();
+    // Descargar el documento como un archivo de Word
+    $nombre_archivo = 'historia_medica.docx';
+    header('Content-Type: application/octet-stream');
+    header('Content-Disposition: attachment;filename="' . $nombre_archivo . '"');
+    $objWriter = IOFactory::createWriter($phpWord, 'Word2007');
+    $objWriter->save('php://output');
 
     mysqli_close($conexion);
 }

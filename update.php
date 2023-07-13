@@ -11,7 +11,7 @@
 	<body>
 		<header>
 			<div class="header">
-				<img src="https://i.imgur.com/pnMSPNs.png" alt="Logo">
+				<img src="images/header.png" alt="Logo">
                 <div class="header-buttons">
 					<form method="POST" action="registro.html">
 						<input value="Registrar" type="submit" class="btn btn-info registro" name="btn1"/>
