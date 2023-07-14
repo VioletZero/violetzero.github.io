@@ -90,7 +90,7 @@ mysqli_close($conexion);
 			});
 		</script>
 	<center>
-		<form name="Datos" method="POST" class="searchform" action=excel.php >
+		<form name="Datos" method="POST" class="searchform" action=word.php >
 			<input type="text" name="id" value="" required placeholder="Inserte el id del paciente que desea imprimir"/>
 			<br>
 			<input value="Enviar" type="submit" class="btn btn-success btn-enviar" name="btn2"/>

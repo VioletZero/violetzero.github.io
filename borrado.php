@@ -2,12 +2,21 @@
 
 if(isset($_POST['btn'])) {
     include('db.php');
-    $ID = $_POST['ID'];
-    mysqli_query($conexion, "DELETE FROM `datos` WHERE `datos`.`ID` = '$ID'") or die("error al eliminar");
-    if (mysqli_affected_rows($conexion) > 0) {
-        echo "'<br> <br> <br>' Se ha eliminado correctamente";
+    $IDs = $_POST['ID'];
+    $IDs_array = explode(',', $IDs); // convertir la cadena de ID separada por comas en un array
+    $num_deleted = 0; // contador para el número de usuarios eliminados
+
+    foreach($IDs_array as $IDs) {
+        mysqli_query($conexion, "DELETE FROM `datos` WHERE `datos`.`ID` = '$IDs'") or die("error al eliminar");
+        if (mysqli_affected_rows($conexion) > 0) {
+            $num_deleted++;
+        }
+    }
+
+    if ($num_deleted > 0) {
+        echo "'<br> <br> <br>' Se han eliminado correctamente $num_deleted usuarios";
     } else {
-        echo "'<br> <br> <br>' El paciente con ID $ID no existe";
+        echo "'<br> <br> <br>' Ninguno de los ID de usuario proporcionados existe";
     }
     mysqli_close($conexion);
 }

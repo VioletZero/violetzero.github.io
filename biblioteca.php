@@ -27,7 +27,20 @@ $consulta="INSERT INTO `datos` (`Nombres`, `Apellidos`, `Cedula`, `Telefono`, `C
 
 $resultado=mysqli_query($conexion,$consulta) or die("error de registro");
 
-echo "'<br>' '<br>' '<br>' Registro completado!";
+echo "<script>
+// cambiar el texto de los botones
+const confirmBox = window.confirm;
+window.confirm = function(message) {
+	const options = Object.assign({}, {cancelButtonText: 'Cerrar sesión', confirmButtonText: 'Continuar'});
+	return confirmBox.call(window, message, options);
+};
+
+if(confirm('Registro completado! ¿Desea continuar o cerrar sesión?')) {
+	window.location.href = 'login.php'; // redirigir al usuario a otra página para realizar otra acción
+} else {
+	window.location.href = 'index.php'; // cerrar la sesión del usuario y redirigirlo a la página de inicio de sesión
+}
+</script>";
 
 
 mysqli_close($conexion);
@@ -42,8 +55,21 @@ mysqli_close($conexion);
 		<style>
 			*{margin: 0; padding: 0}
 		</style>
+		
 	</head>
 	<body>
+	<style>
+    .btns {
+        display: none;
+    }
+</style>
+
+<div id="mensaje"></div>
+
+<div class="btns" id="btns">
+    <button id="otra_accion">Otra acción</button>
+    <button id="cerrar_sesion">Cerrar sesión</button>
+</div>
 		<header>
 			<div class="header">
 				<img src="images/header.png" alt="Logo">
@@ -70,5 +96,19 @@ mysqli_close($conexion);
 				</div>
 			</div>
 		</header>
+		<script>
+    // Mostrar los botones después de que se haya completado el registro
+    document.getElementById("btns").style.display = "block";
+
+    // Redirigir al usuario a otra página para realizar otra acción
+    document.getElementById("otra_accion").addEventListener("click", function() {
+        window.location.href = "login.php";
+    });
+
+    // Cerrar la sesión del usuario y redirigirlo a la página de inicio de sesión
+    document.getElementById("cerrar_sesion").addEventListener("click", function() {
+        window.location.href = "index.php";
+    });
+</script>
 	</body>
 </html>
