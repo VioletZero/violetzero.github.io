@@ -7,89 +7,72 @@ use PhpOffice\PhpWord\SimpleType\Jc;
 use PhpOffice\PhpWord\Style\Cell;
 use PhpOffice\PhpWord\Style\Table;
 
+// ...
+
 if (isset($_POST['btn2'])) {
     include('db.php');
-    $id = $_POST['id']; // Suponiendo que el usuario ha ingresado el ID a buscar
+    $id = $_POST['id'];
 
+    // Obtener los datos del registro con el ID especificado
     $tabla = "SELECT * FROM `datos` WHERE ID = $id";
     $resultado = mysqli_query($conexion, $tabla) or die("error de consulta");
+    $fila = mysqli_fetch_assoc($resultado);
 
-    // Create a new PHPWord object
+    // Crear el documento de Word
     $phpWord = new \PhpOffice\PhpWord\PhpWord();
-
-    // Agregar una sección al documento
     $section = $phpWord->addSection();
+
+    // Agregar un título al documento
+    $section->addText('Historia Médica', array('bold' => true, 'size' => 16));
 
     // Agregar un encabezado al documento
     $header = $section->addHeader();
-    $header->addText('Centro Médico Belleza Total', array('bold' => true), array('alignment' => \PhpOffice\PhpWord\SimpleType\Jc::CENTER));
+    $header->addText('Centro Médico Belleza Total', array('bold' => true, 'size' => 14), array('alignment' => Jc::CENTER));
 
     // Crear la tabla
     $table = $section->addTable(array('borderSize' => 6, 'borderColor' => '999999'));
 
-    // Agregar los encabezados de las columnas
+    // Agregar los valores a la tabla
     $table->addRow();
-    $table->addCell(4000, array('bgColor' => 'F2F2F2', 'valign' => 'center'))->addText('Campo', array('bold' => true), array('alignment' => \PhpOffice\PhpWord\SimpleType\Jc::CENTER));
-    $table->addCell(4000, array('bgColor' => 'F2F2F2', 'valign' => 'center'))->addText('Valor', array('bold' => true), array('alignment' => \PhpOffice\PhpWord\SimpleType\Jc::CENTER));
+    $table->addCell(4000, array('bold' => true, 'valign' => 'center', 'cellMargin' => 80, 'alignment' => 'left', 'bgColor' => 'cccccc'))->addText('Nombres y apellidos:', array('size' => 12));
+    $table->addCell(8000, array('valign' => 'center', 'cellMargin' => 80, 'alignment' => 'left'))->addText($fila['Nombres'] . ' ' . $fila['Apellidos'], array('size' => 12));
+    $table->addCell(4000, array('bold' => true, 'valign' => 'center', 'cellMargin' => 80, 'alignment' => 'left', 'bgColor' => 'cccccc'))->addText('Cédula:', array('size' => 12));
+    $table->addCell(8000, array('valign' => 'center', 'cellMargin' => 80, 'alignment' => 'left'))->addText('C.I ' . $fila['Cedula'], array('size' => 12));
+    $table->addRow();
+    $table->addCell(4000, array('bold' => true, 'valign' => 'center', 'cellMargin' => 80, 'alignment' => 'left', 'bgColor' => 'cccccc'))->addText('Teléfono:', array('size' => 12));
+    $table->addCell(8000, array('valign' => 'center', 'cellMargin' => 80, 'alignment' => 'left'))->addText($fila['Telefono'], array('size' => 12));
+    $table->addCell(4000, array('bold' => true, 'valign' => 'center', 'cellMargin' => 80, 'alignment' => 'left', 'bgColor' => 'cccccc'))->addText('Correo electrónico:', array('size' => 12));
+    $table->addCell(8000, array('valign' => 'center', 'cellMargin' => 80, 'alignment' => 'left'))->addText($fila['Correo'], array('size' => 12));
+    $table->addRow();
+    $table->addCell(4000, array('bold' => true, 'valign' => 'center', 'cellMargin' => 80, 'alignment' => 'left', 'bgColor' => 'cccccc'))->addText('Dirección:', array('size' => 12));
+    $table->addCell(8000, array('valign' => 'center', 'cellMargin' => 80, 'alignment' => 'left'))->addText($fila['Direccion'], array('size' => 12));
+    $table->addCell(4000, array('bold' => true, 'valign' => 'center', 'cellMargin' => 80, 'alignment' => 'left', 'bgColor' => 'cccccc'))->addText('Motivo de consulta:', array('size' => 12));
+    $table->addCell(8000, array('valign' => 'center', 'cellMargin' => 80, 'alignment' => 'left'))->addText($fila['Motivo_consulta'], array('size' => 12));
+    $table->addRow();
+    $table->addCell(4000, array('bold' => true, 'valign' => 'center', 'cellMargin' => 80, 'alignment' => 'left', 'bgColor' => 'cccccc'))->addText('Tratamiento propuesto:', array('size' => 12));
+    $table->addCell(8000, array('valign' => 'center', 'cellMargin' => 80, 'alignment' => 'left'))->addText($fila['TratamientoProc'], array('size' => 12));
+    $table->addCell(4000, array('bold' => true, 'valign' => 'center', 'cellMargin' => 80, 'alignment' => 'left', 'bgColor' => 'cccccc'))->addText('Fecha de Consulta:', array('size' => 12));
+    $table->addCell(8000, array('valign' => 'center', 'cellMargin' => 80, 'alignment' => 'left'))->addText($fila['Fecha_consulta'], array('size' => 12));
+    $table->addRow();
+    $table->addCell(4000, array('bold' => true, 'valign' => 'center', 'cellMargin' => 80, 'alignment' => 'left', 'bgColor' => 'cccccc'))->addText('Antecedentes Personales:', array('size' => 12));
+    $table->addCell(8000, array('valign' => 'center', 'cellMargin' => 80, 'alignment' => 'left'))->addText($fila['AntecedentesPer'], array('size' => 12));
+    $table->addCell(4000, array('bold' => true, 'valign' => 'center', 'cellMargin' => 80, 'alignment' => 'left', 'bgColor' => 'cccccc'))->addText('Antecedentes Familiares:', array('size' => 12));
+    $table->addCell(8000, array('valign' => 'center', 'cellMargin' => 80, 'alignment' => 'left'))->addText($fila['AntecedentesFam'], array('size' => 12));
+    $table->addRow();
+    $table->addCell(4000, array('bold' => true, 'valign' => 'center', 'cellMargin' => 80, 'alignment' => 'left', 'bgColor' => 'cccccc'))->addText('Fecha de procedimiento:', array('size' => 12));
+    $table->addCell(8000, array('valign' => 'center', 'cellMargin' => 80, 'alignment' => 'left'))->addText($fila['FechaProc'], array('size' => 12));
+    $table->addCell(4000, array('bold' => true, 'valign' => 'center', 'cellMargin' => 80, 'alignment' => 'left', 'bgColor' => 'cccccc'))->addText('Próxima Cita:', array('size' => 12));
+    $table->addCell(8000, array('valign' => 'center', 'cellMargin' => 80, 'alignment' => 'left'))->addText($fila['ProxCita'] . "\n" . 'Fecha de alta: ' . $fila['FechaAlta'], array('size' => 12));
+    $table->addRow();
+    $table->addCell(4000, array('bold' => true, 'valign' => 'center', 'cellMargin' => 80, 'alignment' => 'left', 'bgColor' => 'cccccc'))->addText('Fecha de Alta:', array('size' => 12));
+    $table->addCell(8000, array('valign' => 'center', 'cellMargin' => 80, 'alignment' => 'left'))->addText($fila['FechaAlta'], array('size' => 12));
+    $table->addCell(4000, array('bold' => true, 'valign' => 'center', 'cellMargin' => 80, 'alignment' => 'left', 'bgColor' => 'cccccc'))->addText('Observaciones:', array('size' => 12));
+    $table->addCell(8000, array('valign' => 'center', 'cellMargin' => 80, 'alignment' => 'left'))->addText($fila['Observaciones'], array('size' => 12));
 
-    // Agregar los datos de la tabla al documento
-    while ($fila = $resultado->fetch_assoc()) {
-
-        // Agregar las filas de la tabla
-        $table->addRow();
-        $table->addCell(4000)->addText('Nombres:', array('bold' => true));
-        $table->addCell(4000)->addText($fila['Nombres']);
-        $table->addRow();
-        $table->addCell(4000)->addText('Apellidos:', array('bold' => true));
-        $table->addCell(4000)->addText($fila['Apellidos']);
-        $table->addRow();
-        $table->addCell(4000)->addText('Cédula:', array('bold' => true));
-        $table->addCell(4000)->addText($fila['Cedula']);
-        $table->addRow();
-        $table->addCell(4000)->addText('Teléfono:', array('bold' => true));
-        $table->addCell(4000)->addText($fila['Telefono']);
-        $table->addRow();
-        $table->addCell(4000)->addText('Correo:', array('bold' => true));
-        $table->addCell(4000)->addText($fila['Correo']);
-        $table->addRow();
-        $table->addCell(4000)->addText('Dirección:', array('bold' => true));
-        $table->addCell(4000)->addText($fila['Direccion']);
-        $table->addRow();
-        $table->addCell(4000)->addText('Antecedentes personales:', array('bold' => true));
-        $table->addCell(4000)->addText($fila['AntecedentesPer']);
-        $table->addRow();
-        $table->addCell(4000)->addText('Antecedentes familiares:', array('bold' => true));
-        $table->addCell(4000)->addText($fila['AntecedentesFam']);
-        $table->addRow();
-        $table->addCell(4000)->addText('Número de hijos:', array('bold' => true));
-        $table->addCell(4000)->addText($fila['NroHijos']);
-        $table->addRow();
-        $table->addCell(4000)->addText('Tratamiento propuesto:', array('bold' => true));
-        $table->addCell(4000)->addText($fila['TratamientoProc']);
-        $table->addRow();
-        $table->addCell(4000)->addText('Fecha de procedimiento:', array('bold'=> true));
-        $table->addCell(4000)->addText($fila['FechaProc']);
-        $table->addRow();
-        $table->addCell(4000)->addText('Próxima cita:', array('bold' => true));
-        $table->addCell(4000)->addText($fila['ProxCita']);
-        $table->addRow();
-        $table->addCell(4000)->addText('Fecha de alta:', array('bold' => true));
-        $table->addCell(4000)->addText($fila['FechaAlta']);
-        $table->addRow();
-        $table->addCell(4000)->addText('Observaciones:', array('bold' => true));
-        $table->addCell(4000)->addText($fila['Observaciones']);
-
-        // Agregar un salto de página después de cada fila
-        $section->addPageBreak();
-
-    }
-
-    // Descargar el documento como un archivo de Word
-    $nombre_archivo = 'historia_medica.docx';
+    // Descargar el documento
     header('Content-Type: application/octet-stream');
-    header('Content-Disposition: attachment;filename="' . $nombre_archivo . '"');
-    $objWriter = IOFactory::createWriter($phpWord, 'Word2007');
+    header('Content-Disposition: attachment;filename="historia_medica.docx"');
+    $objWriter = \PhpOffice\PhpWord\IOFactory::createWriter($phpWord, 'Word2007');
     $objWriter->save('php://output');
-
-    mysqli_close($conexion);
+    exit();
 }
