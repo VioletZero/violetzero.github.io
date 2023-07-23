@@ -8,7 +8,7 @@
 			*{margin: 0; padding: 0}
 		</style>
 	</head>
-	<body>
+	<body> 
 		<header>
 			<div class="header">
 				<img src="images/header.png" alt="Logo">
