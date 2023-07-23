@@ -1,5 +1,12 @@
 <?php
+session_start();
 
+if (!isset($_SESSION['usuario'])) {
+    // Si la sesión no está iniciada, mostrar un mensaje de alerta de JavaScript y redirigir al usuario a la página de inicio de sesión
+    echo "<script>alert('Debe iniciar sesión para acceder a esta página.');</script>";
+    header('Location: index.php');
+    exit;
+}
 if(isset($_POST['btn']))
 {
 	include('db.php');

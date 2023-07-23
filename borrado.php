@@ -20,8 +20,16 @@ if(isset($_POST['btn'])) {
     }
     mysqli_close($conexion);
 }
-
 ?>
+
+<script>
+if(confirm('¿Desea mantener su sesión abierta?')) {
+    // Si el usuario selecciona "Sí", no se hace nada
+} else {
+    // Si el usuario selecciona "No", se redirige al usuario a la página de cierre de sesión
+    window.location.href = 'cerrar_sesion.php';
+}
+</script>
 <html>
 	<head> 
 		<title>Datos eliminados</title>

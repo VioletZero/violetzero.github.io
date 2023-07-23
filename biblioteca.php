@@ -1,4 +1,12 @@
 <?php
+session_start();
+
+if (!isset($_SESSION['usuario'])) {
+    // Si la sesión no está iniciada, mostrar un mensaje de alerta de JavaScript y redirigir al usuario a la página de inicio de sesión
+    echo "<script>alert('Debe iniciar sesión para acceder a esta página.');</script>";
+    header('Location: index.php');
+    exit;
+}
 if(isset($_POST['btn1']))
 {
 include('db.php');
@@ -36,9 +44,10 @@ window.confirm = function(message) {
 };
 
 if(confirm('Registro completado! ¿Desea continuar o cerrar sesión?')) {
-	window.location.href = 'login.php'; // redirigir al usuario a otra página para realizar otra acción
+    window.location.href = 'login.php'; // redirigir al usuario a otra página para realizar otra acción
 } else {
-	window.location.href = 'index.php'; // cerrar la sesión del usuario y redirigirlo a la página de inicio de sesión
+    // Cerrar la sesión del usuario y redirigirlo a la página de inicio de sesión
+    window.location.href = 'cerrar_sesion.php';
 }
 </script>";
 

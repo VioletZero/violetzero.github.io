@@ -98,8 +98,9 @@ margin-top: 10px;
 .btn-enviar {
   background-color: rgba(213, 140, 252, 0.8);
   align-items: center;
-  width: 105%;
+  width: 54%;
   margin-top: 10px;
+  margin-right: 1px;
 }
 .texto-centrado {
   text-align: center;
@@ -117,7 +118,9 @@ margin-top: 10px;
 input[name="usuario"] {
   width: 100%;
 }
-
+input[name="usuarioo"] {
+  width: 105%;
+}
 input[name="password"] {
   width: 100%;
 }
@@ -132,4 +135,31 @@ input[name="password"] {
 .texto-formulario {
   font-style: bold;
   font-size: 32px;
+}
+.btn-crear-cuenta {
+  background-color: rgba(213, 140, 252, 0.8);
+  align-items: center;
+  width: 45%;
+  margin-top: 10px;
+}
+.btn-registrar {
+  background-color: rgba(213, 140, 252, 0.8);
+  align-items: center;
+  width: 105%;
+  margin-top: 10px;
+}
+.btn-recuperar {
+  background-color: rgba(213, 140, 252, 0.8);
+  align-items: center;
+  width: 110%;
+  margin-top: 10px;
+}
+.cambiar-pass {
+  text-align: center;
+}
+.btn-cambio-contrasena {
+  background-color: rgba(213, 140, 252, 0.8);
+  align-items: center;
+  width: 110%;
+  margin-top: 10px;
 }

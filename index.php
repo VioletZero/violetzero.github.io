@@ -27,11 +27,14 @@
     </center>
     <center>
     <form name="usuario" method="POST" class="loginForm" action="login.php">
-        <br>
-        <input type="text" name="usuario" value="" required placeholder="Usuario" password/>
-        <input type="password" name="password" value="" required placeholder="Contraseña" password/>
-        <input value="Enviar" type="submit" class="btn btn-success btn-enviar" name="btn1"/>
-    </form>
+				<br>
+				<input type="text" name="usuario" value="" required placeholder="Usuario" password/>
+				<input type="password" name="password" value="" required placeholder="Contraseña" password/>
+				<input value="Enviar" type="submit" class="btn btn-success btn-enviar" name="btn1"/>
+				<input type="button" value="Crear cuenta" onclick="window.location.href='registro.php'" class="btn btn-success btn-crear-cuenta"/>
+			</form>
+			<p><a href="recuperar_contrasena.php">¿Olvidaste tu contraseña?</a></p>
+		</div>
 </center>
 </body>
 </html>
