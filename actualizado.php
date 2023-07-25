@@ -81,8 +81,8 @@ mysqli_close($conexion);
 					</form>
 				</div>
 				<div class="header-buttons">
-					<form method="POST" action="actualizado.php">
-						<input value="Actualizar" type="submit" class="btn btn-info actualizar" name="btn4"/>
+					<form method="POST" action="consulta.php">
+						<input value="Consulta" type="submit" class="btn btn-info actualizar" name="btn4"/>
 					</form>
 				</div>
 				<div class="text">

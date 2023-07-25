@@ -91,12 +91,6 @@ mysqli_close($conexion);
 				</div>
 			</div>
 		</header>
-		<button id="recargar">Recargar</button>
-		<script>
-			document.getElementById("recargar").addEventListener("click", function() {
-				location.reload();
-			});
-		</script>
 	<center>
 		<form name="Datos" method="POST" class="searchform" action=word.php >
 			<input type="text" name="id" value="" required placeholder="Inserte el id del paciente que desea imprimir"/>

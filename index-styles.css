@@ -119,7 +119,7 @@ input[name="usuario"] {
   width: 100%;
 }
 input[name="usuarioo"] {
-  width: 105%;
+  width: 90%;
 }
 input[name="password"] {
   width: 100%;
@@ -151,7 +151,7 @@ input[name="password"] {
 .btn-recuperar {
   background-color: rgba(213, 140, 252, 0.8);
   align-items: center;
-  width: 110%;
+  width: 95%;
   margin-top: 10px;
 }
 .cambiar-pass {

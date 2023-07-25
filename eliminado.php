@@ -76,8 +76,8 @@ mysqli_close($conexion);
 					</form>
 				</div>
 				<div class="header-buttons">
-					<form method="POST" action="eliminado.php">
-						<input value="Eliminar" type="submit" class="btn btn-info eliminar" name="btn3"/>
+					<form method="POST" action="Consulta.php">
+						<input value="Consulta" type="submit" class="btn btn-info eliminar" name="btn3"/>
 					</form>
 				</div>
 				<div class="header-buttons">

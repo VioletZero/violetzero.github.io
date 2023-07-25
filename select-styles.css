@@ -47,7 +47,6 @@
   color: rgba(213, 140, 252, 0.8); /* cambiar el color del texto del botón al pasar el mouse sobre él */
   cursor: pointer; /* cambiar el cursor a pointer */
 }
-
 .registro {
   margin-right: 10px; /* agregar un margen derecho para separar los botones */
 }

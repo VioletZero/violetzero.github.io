@@ -78,12 +78,14 @@ if(isset($_POST['btn']))
 ?>
 
 <script>
-if(confirm('¿Desea mantener su sesión abierta?')) {
+setTimeout(function() {
+  if(confirm('¿Desea mantener su sesión abierta?')) {
     // Si el usuario selecciona "Sí", no se hace nada
-} else {
+  } else {
     // Si el usuario selecciona "No", se redirige al usuario a la página de cierre de sesión
     window.location.href = 'cerrar_sesion.php';
-}
+  }
+}, 500); // 500 milisegundos = 0.5 segundos
 </script>
 
 <!DOCTYPE html>

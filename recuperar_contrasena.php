@@ -26,10 +26,11 @@
 	<body>
 		<div class="container">
 			<h1>Recuperar contraseña</h1>
-			<p>Ingrese su dirección de correo electrónico o nombre de usuario para recibir una contraseña temporal.</p>
+      <br>
+			<p>Ingrese su dirección de correo electrónico o <br> nombre de usuario para recibir una contraseña temporal.</p>
 			<form method="POST" action="procesar_recuperacion.php">
 				<label for="usuario"></label>
-				<input type="text" name="usuarioo" id="usuario" required placeholder="Correo electrónico o nombre de usuario">
+				<input type="text" name="usuarioo" id="usuario" required placeholder="Ingrese su correo electrónico o nombre de usuario">
 				<input type="submit" value="Enviar" class="btn-recuperar">
 			</form>
 		</div>

@@ -43,12 +43,11 @@ window.confirm = function(message) {
 	return confirmBox.call(window, message, options);
 };
 
-if(confirm('Registro completado! ¿Desea continuar o cerrar sesión?')) {
-    window.location.href = 'login.php'; // redirigir al usuario a otra página para realizar otra acción
-} else {
-    // Cerrar la sesión del usuario y redirigirlo a la página de inicio de sesión
-    window.location.href = 'cerrar_sesion.php';
-}
+setTimeout(function() {
+	if(confirm('¿Desea mantener su sesión abierta?')) {
+	} else {
+	  window.location.href = 'cerrar_sesion.php'; }
+  }, 500); // 500 milisegundos = 0.5 segundos
 </script>";
 
 
@@ -111,7 +110,7 @@ mysqli_close($conexion);
 
     // Redirigir al usuario a otra página para realizar otra acción
     document.getElementById("otra_accion").addEventListener("click", function() {
-        window.location.href = "login.php";
+        window.location.href = "inicio.php";
     });
 
     // Cerrar la sesión del usuario y redirigirlo a la página de inicio de sesión

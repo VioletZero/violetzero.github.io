@@ -27,11 +27,26 @@ if (isset($_POST['btn2'])) {
     // Agregar un título al documento
     $section->addText('Historia Médica', array('bold' => true, 'size' => 16), array('alignment' => Jc::CENTER));
 
-    // Agregar un encabezado al documento
-    $header = $section->addHeader();
-    $header->addText('Centro Médico Belleza Total', array('bold' => true, 'size' => 14), array('alignment' => Jc::CENTER));
+// Agregar un encabezado al documento
+$header = $section->addHeader();
+$header->addText('Centro Médico Belleza Total', array('bold' => true, 'size' => 16), array('alignment' => Jc::CENTER));
+
+$header->addImage(
+    'images/header.png',
+    array(
+        'width' => 78,
+        'height' => 100,
+        'positioning' => \PhpOffice\PhpWord\Style\Image::POSITION_ABSOLUTE,
+        'posHorizontal' => \PhpOffice\PhpWord\Style\Image::POSITION_HORIZONTAL_LEFT,
+        'posVertical' => \PhpOffice\PhpWord\Style\Image::POSITION_VERTICAL_TOP,
+        'marginLeft' => -119,
+        'marginTop' => -20,
+    )
+);
 
     // Agregar un salto de párrafo
+    $section->addTextBreak();
+    $section->addTextBreak();
     $section->addTextBreak();
 
     // Crear la tabla

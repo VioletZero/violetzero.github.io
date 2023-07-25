@@ -49,17 +49,17 @@
   cursor: pointer; /* cambiar el cursor a pointer */
 }
 .registro {
-  margin-left: 20px;
+  margin-left: 50px;
   margin-right: 10px;
 }
 .consulta {
   margin-right: 10px; /* agregar un margen derecho para separar los botones */
-  margin-left: -300px;
+  margin-left: -150px;
 }
 
 .eliminar {
   margin-right: 10px; /* agregar un margen derecho para separar los botones */
-  margin-left: -500px;
+  margin-left: -350px;
 }
 
 .actualizar {
